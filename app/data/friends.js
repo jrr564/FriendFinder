@@ -1,8 +1,8 @@
 //friends - our DATA
 var friendArray = [
-    {"name": "Jon",
-    "photo": "www.google.com",
-    "scores": [
+    {name: "Jon",
+    photo: "www.google.com",
+    scores: [
         1,
         2,
         3,
@@ -17,4 +17,4 @@ var friendArray = [
 }
 ];
 
-module.exports = friendsArray;
+module.exports = friendArray;

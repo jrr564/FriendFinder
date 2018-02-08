@@ -8,6 +8,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <style>
 
         h1   {font-family: 'Montserrat', sans-serif;};
@@ -23,13 +24,13 @@
                 <div class="panel-heading">
                     <h3>ABOUT YOU</h3>
                 </div>
-                <div class="panel-body input-group">
+                <div id="friendName" class="panel-body input-group">
                     <h4>Your Name</h4>
                     <div class="input-group input-group-med">
                         <input type="text" style= "width: 300px" class="form-control" aria-describedby="sizing-addon2">
                     </div>
                     <h4>Link to your Photo</h4>
-                    <div class="input-group input-group-med">
+                    <div id="friendPhoto" class="input-group input-group-med">
                             <input type="text" style= "width: 300px" class="form-control" aria-describedby="sizing-addon2">
                     </div>
                 </div>
@@ -43,8 +44,8 @@
                 </div>
                 <div class="panel-body">
                     <h4>blah blah blah question?</h4>
-                    <div class="form-group">
-                        <select placeholder= "Select an Option" class="form-control">
+                    <div id="formAnswer" class="form-group">
+                        <select placeholder= "Select an Option" class=" answerForm form-control">
                           <option>1 (Strongly Disagree)</option>
                           <option>2</option>
                           <option>3</option>
@@ -226,6 +227,44 @@
                 </div>
             </div>
         </div>
+        <button name="submitButton" class="btn btn-lg btn-info submitButton">Submit</button>
     </div>
+    <script>
+        $(".submitButton").on("click", function() {
+            var newFriend = {
+                name: $('#friendName').val().trim(),
+                photo: $('#friendPhoto').val().trim(),
+                answer:  jQuery.ajaxSettings.traditional = true
+            };
+            console.log(newFriend);
+        });
+
+        // for (i = 0; i < 10; i++) {
+        // var newVal = $('#a' + i).val();
+        // newFriend.friendNumbers.push(parseInt(newVal));
+        // }
+        // console.log(newFriend);
+       
+        
+        // var formdata;
+        // var formData = new FormData(document.querySelector('form'));
+        // console.log(formdata);
+        // var myObject = {
+        // a: {
+        //     one: 1,
+        //     two: 2,
+        //     three: 3
+        // },
+        // b: [ 1, 2, 3 ]
+        // };
+        
+        // var recursiveDecoded = decodeURIComponent( $.param( myObject ) );
+        
+        // console.log( recursiveEncoded );
+        // console.log( recursiveDecoded );
+    
+    </script>
+
+
 </body>
 </html>
