@@ -8,7 +8,7 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 2000;
 
-// Sets up the Express app to handle data parsing
+// Express setup for data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
@@ -21,5 +21,5 @@ require("./app/routing/htmlRoutes.js")(app);
 
 // Initiate the listener.
 app.listen(PORT, function() {
-	console.log("we listenin' home on port: " + PORT);
+	console.log("we listenin' on port: " + PORT);
   });

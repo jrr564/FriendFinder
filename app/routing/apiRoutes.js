@@ -1,21 +1,23 @@
-//Loadin data - links to our data
-var friendData = require("../data/friends.js");
 
+var path = require("path");
+//Loadin data - links to our data
+var friendArray = require("../data/friends");
 
 //Routing
 module.exports = function(app) {
 
-//API GET Requests
-    app.get("/api/friends", function(req, res){
-        console.log("get api working");
-        res.json(friendData);
-       console.log(friendData);
+// GET Request gets data from 
+    app.get("/api/friends", function(req, res) {
+        res.json(friendArray);
+        console.log(friendArray);
     });
 
-// //API POST Requests    
-    // app.post("/api/friends", function(req, res) {
-    //    friendData.push(req.body); 
-    //    res.json(true);
-    // }); //post
+//API POST Requests    
+    app.post('/api/friends', function(req, res){
 
-} //app
+    //Pushes to friends data, finds match
+            friendArray.push(req.body);
+            res.json(friendArray);
+    
+        });
+    }
